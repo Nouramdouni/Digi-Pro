@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digi Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header fixed-top">
+        <nav class="container navbar navbar-expand-lg">          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="service.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#services">All Services</a></li>
+                            <li><a class="dropdown-item" href="#sponsor">Sponsor</a></li>
+                            <li><a class="dropdown-item" href="#site-web">Website Design</a></li>
+                            <li><a class="dropdown-item" href="#logo">Logo Design</a></li>
+                            <li><a class="dropdown-item" href="#marketing">Digital Marketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                   
+                    <li class="nav-item"><a class="nav-link" href="track.html">Track Order</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">Welcome to DIGI PRO</h1>
+            <h2><p>We develop your digital presence with creative ideas and tangible results.</p></h2>
+            <p class="lead">📍 هل لديك مشروع… ولكنك لم تبدأ بعد؟</p>
+            <p> DIGI PRO هنا لتبدأ معك من الصفر! </p>
+            <p>🛠️ خدماتنا:</p>
+            <ul class="list-unstyled d-inline-block text-start">
+                <li class="mb-2">✔️ نصمم لك شعارًا احترافيًا</li>
+                <li class="mb-2">✔️ نطوّر لك موقعًا إلكترونيًا عصريًا</li>
+                <li class="mb-2">✔️ نطلق لك حملات إعلانية ممولة على فيسبوك وإنستغرام</li>
+                <li class="mb-2">✔️ نساعدك على بناء هوية رقمية كاملة لمشروعك</li>
+            </ul>
+            <p>💡 لماذا DIGI PRO?</p>
+            <ul class="list-unstyled d-inline-block text-start">
+                <li class="mb-2">🔹 نعرف السوق</li>
+                <li class="mb-2">🔹 نعمل بإبداع</li>
+                <li class="mb-2">🔹 نرافقك خطوة بخطوة نحو النجاح</li>
+            </ul>
+            <p>📲  تواصل معنا اليوم وابدأ رحلتك نحو التميّز الرقمي !</p>
+            <p>DIGI PRO — انطلاقتك الرقمية تبدأ من هنا</p>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Services</h2>
+            <div class="row" id="services-container"></div>
+        </div>
+    </section>
+
+    <!-- Site Web Section -->
+    <section id="site-web">
+        <div class="container">
+            <h2 class="text-center mb-5">Website Design</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="assets/images/site-web.jpg" class="img-fluid rounded" alt="Website Design">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">We design professional, mobile-friendly websites that reflect your identity and build customer trust.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-service="Website Design">Order Service</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Section -->
+    <section id="logo">
+        <div class="container">
+            <h2 class="text-center mb-5">Logo Design</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="assets/images/logo.jpg" class="img-fluid rounded" alt="Logo Design">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Unique and professional logo designs for your brand.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-service="Logo Design">Order Service</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Section -->
+    <section id="sponsor">
+        <div class="container">
+            <h2 class="text-center mb-5">Sponsor</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="assets/images/sponsor.jpg" class="img-fluid rounded" alt="Sponsor">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">We create advertising campaigns on Facebook and Instagram to reach more potential customers.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-service="Sponsor">Order Service</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Section -->
+    <section id="marketing">
+        <div class="container">
+            <h2 class="text-center mb-5">Digital Marketing</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="assets/images/marketing.jpg" class="img-fluid rounded" alt="Digital Marketing">
+                </div>
+                <div class="col-md-6">
+                    <p>We help you build an effective marketing strategy on social media to increase your engagement and sales.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" data-service="Digital Marketing">Order Service</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>All Rights Reserved © 2025 DIGI PRO</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/DIGI.PRO.TN" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade" id="orderModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Order Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="orderForm" onsubmit="sendOrder(event)">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label>Full Name</label>
+                            <input name="name" type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label>Phone Number</label>
+                            <input type="tel" class="form-control" pattern="\d{8}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label>Email</label>
+                            <input name="email" type="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label>Service Requested</label>
+                            <input name="service" type="text" class="form-control" id="selectedService" readonly>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

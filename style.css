@@ -1,0 +1,472 @@
+
+:root {
+--main-color: #ffffff; 
+--secondary-color: #3498db; 
+--background-primary: #f4f6f9; 
+--section-color: #ecf0f1; 
+--text-color: #2c3e50; 
+}
+
+body {
+font-family: 'Tajawal', sans-serif;
+scroll-behavior: smooth;
+padding-top: 80px;
+background-color: var(--background-primary);
+color: var(--text-color);
+}
+
+.header, .navbar {
+background-color: var(--main-color);
+transition: all 0.5s ease-in-out;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+color: var(--text-color) !important;
+transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+color: var(--secondary-color) !important;
+transform: scale(1.08) rotate(10deg); 
+}
+
+section {
+padding: 100px 0;
+background-color: var(--section-color);
+color: var(--text-color);
+animation: fadeInUp 1.2s ease-in-out both;
+}
+
+@keyframes fadeInUp {
+from { opacity: 0; transform: translateY(50px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.container h2 {
+font-size: 2.8rem;
+margin-bottom: 20px;
+color: var(--secondary-color);
+animation: slideIn 1s ease forwards;
+}
+
+.container p {
+font-size: 1.2rem;
+line-height: 1.8;
+animation: fadeInText 2s ease;
+}
+
+.service-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+}
+
+#home {
+min-height: 100vh;
+background:
+  linear-gradient(rgba(52, 152, 219, 0.8), rgba(52, 152, 219, 0.8)),
+  url('digi pro.jpg') center/cover no-repeat;
+color: var(--text-color);
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+text-align: center;
+animation: zoomIn 1.5s ease-in-out, moveBackground 10s infinite alternate;
+}
+
+@keyframes zoomIn {
+from { transform: scale(0.9); opacity: 0; }
+to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes moveBackground {
+0% { background-position: 0 0; }
+50% { background-position: 100% 0; }
+100% { background-position: 0 100%; }
+}
+
+#home h1 {
+font-size: 4rem;
+margin-bottom: 20px;
+color: var(--secondary-color);
+animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+white-space: nowrap;
+overflow: hidden;
+border-right: 4px solid var(--secondary-color);
+}
+
+
+#home p {
+font-size: 1.7rem;
+margin-bottom: 30px;
+color: var(--text-color);
+animation: fadeInText 3s ease-in-out;
+}
+
+@keyframes typing {
+from { width: 0; }
+to { width: 100%; }
+}
+
+@keyframes blink-caret {
+from, to { border-color: transparent; }
+50% { border-color: var(--secondary-color); }
+}
+
+@keyframes slideIn {
+from { transform: translateX(-100px); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInText {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+.btn-primary {
+background-color: var(--secondary-color);
+border-color: var(--secondary-color);
+color: #fff;
+transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+background-color: #2980b9;
+border-color: #2980b9;
+color: #fff;
+}
+
+#track {
+background-color: #ffffff;
+color: var(--secondary-color);
+position: relative;
+overflow: hidden;
+animation: fadeInUp 1.2s ease-in-out both;
+}
+
+#track::before {
+content: "";
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(120deg, transparent, rgba(52,152,219,0.2), transparent);
+animation: shine 3s infinite;
+}
+@keyframes shine {
+0% { left: -100%; }
+50% { left: 100%; }
+100% { left: 100%; }
+}
+
+#track h2 {
+background-color: rgba(255,255,255,0.05);
+padding: 20px;
+border-radius: 10px;
+color: var(--text-color);
+transition: background 0.3s;
+}
+
+#track h2:hover {
+background-color: rgba(255,255,255,0.1);
+}
+
+.contact-info, .service-card, .modal-content {
+animation: popUp 0.5s ease forwards;
+}
+
+@keyframes popUp {
+from { transform: scale(0.8); opacity: 0; }
+to { transform: scale(1); opacity: 1; }
+}
+
+.contact-info,
+form.bg-light,
+.modal-content {
+background-color: #ecf0f1;
+color: #2c3e50;
+}
+
+input.form-control, textarea.form-control {
+background-color: #bdc3c7;
+color: #2c3e50;
+border: none;
+}
+
+input.form-control::placeholder,
+textarea.form-control::placeholder {
+color: #7f8c8d;
+}
+
+form.bg-light, .modal-content {
+animation: fadeSlideUp 0.8s ease-in-out;
+}
+
+@keyframes fadeSlideUp {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-info {
+background-color: #ecf0f1;
+border-radius: 8px;
+padding: 20px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+color: #3498db; 
+}
+
+.contact-info p {
+color: #2980b9; 
+}
+
+.contact-info button {
+background-color: #3498db; 
+color: white;
+}
+
+/* Logo animé (rotation fluide) */
+#home img {
+animation: rotateLogo 5s linear infinite;
+position: absolute;
+top: 10%;
+left: 50%;
+transform: translateX(-50%);
+width: 150px; 
+}
+
+@keyframes rotateLogo {
+0% {
+  transform: translateX(-50%) rotate(0deg);
+}
+25% {
+  transform: translateX(-50%) rotate(90deg);
+}
+50% {
+  transform: translateX(-50%) rotate(180deg);
+}
+75% {
+  transform: translateX(-50%) rotate(270deg);
+}
+100% {
+  transform: translateX(-50%) rotate(360deg);
+}
+}
+
+/* animation Dropdown  */
+.dropdown-menu {
+display: none;
+position: absolute;
+background-color: #fff;
+min-width: 160px;
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+z-index: 1;
+opacity: 0;
+transform: translateY(-30px) scale(0.9);
+transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.dropdown:hover .dropdown-menu {
+display: block;
+opacity: 1;
+transform: translateY(0) scale(1);
+animation: bounceIn 1s ease-in-out;
+}
+
+@keyframes bounceIn {
+0% {
+  opacity: 0;
+  transform: translateY(-30px) scale(0.9);
+}
+60% {
+  opacity: 1;
+  transform: translateY(10px) scale(1.05);
+}
+100% {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+}
+
+/*effet de transformation pour les boutons */
+.btn-primary, .dropdown-item, .navbar-brand {
+transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .dropdown-item:hover, .navbar-brand:hover {
+transform: scale(1.1);
+background-color: #2980b9;
+color: #fff;
+box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+animation: buttonPulse 0.8s ease-out infinite alternate;
+}
+
+/* Animation de pulsation pour les boutons */
+@keyframes buttonPulse {
+0% {
+  transform: scale(1);
+}
+100% {
+  transform: scale(1.1);
+}
+}
+
+/* Animation dynamique du dropdown */
+.dropdown-menu {
+display: none;
+position: absolute;
+background-color: #fff;
+min-width: 160px;
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+z-index: 1;
+opacity: 0;
+transform: translateY(-30px) scale(0.9);
+transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+animation: dropdownShow 0.5s ease-in-out;
+}
+
+.dropdown:hover .dropdown-menu {
+display: block;
+opacity: 1;
+transform: translateY(0) scale(1);
+animation: bounceIn 1s ease-in-out;
+}
+
+@keyframes dropdownShow {
+0% {
+  opacity: 0;
+  transform: translateY(-30px) scale(0.9);
+}
+100% {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+}
+
+/* Effet d'animationdropdown */
+.dropdown-menu .dropdown-item {
+color: #3498db;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+font-size: 16px;
+transition: all 0.3s ease-out;
+}
+
+.dropdown-menu .dropdown-item:hover {
+background-color: #3498db;
+color: #fff;
+transform: translateX(0) scale(1.1);
+box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.dropdown-menu .dropdown-item:active {
+transform: scale(0.98) translateX(5px) rotate(15deg);
+}
+
+/* Animation de rebond pour le dropdown */
+@keyframes bounceIn {
+0% {
+  opacity: 0;
+  transform: translateY(-30px) scale(0.9);
+}
+60% {
+  opacity: 1;
+  transform: translateY(10px) scale(1.05);
+}
+100% {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+}
+
+/* Animation générale pour les boutons */
+.btn-primary:focus, .dropdown-item:focus, .navbar-brand:focus {
+outline: none;
+box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5);
+}
+
+/* animation dynamique de "track" */
+#track {
+transition: transform 0.3s ease-in-out;
+}
+
+#track:hover {
+transform: translateY(-5px) scale(1.05);
+box-shadow: 0 10px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Animation de texte pour les sections et titres */
+@keyframes fadeInUp {
+from { opacity: 0; transform: translateY(50px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+font-size: 2rem;
+color: var(--secondary-color);
+animation: fadeInUp 0.8s ease-in-out;
+}
+
+.footer {
+  background: #212529;
+  position: relative;
+  padding: 3rem 0;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+/* Style des icônes sociales */
+.social-links a {
+  font-size: 2.5rem;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Icônes rondes */
+  line-height: 60px; /* Centrer l'icône dans le cercle */
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  background-color: transparent; /* Par défaut, fond transparent */
+  color: white; /* Couleur de l'icône par défaut */
+}
+
+/* Couleur de base de chaque icône */
+#facebook {
+  color: #3b5998; /* Bleu de Facebook */
+}
+
+#instagram {
+  color: #e4405f; /* Rose d'Instagram */
+}
+
+#linkedin {
+  color: #0077b5; /* Bleu clair LinkedIn */
+}
+
+/* Effet de survol (ajout de la couleur de fond) */
+.social-links a:hover {
+  transform: scale(1.2); /* Agrandir l'icône au survol */
+  background-color: currentColor; /* La couleur de fond devient celle de l'icône */
+  color: white; /* Icône reste blanche */
+}
+
+#facebook:hover {
+  background-color: #3b5998; 
+}
+
+#instagram:hover {
+  background-color: #e4405f; 
+}
+
+#linkedin:hover {
+  background-color: #0077b5; 
+}
