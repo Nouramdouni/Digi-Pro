@@ -1,472 +1,360 @@
-
-:root {
---main-color: #ffffff; 
---secondary-color: #3498db; 
---background-primary: #f4f6f9; 
---section-color: #ecf0f1; 
---text-color: #2c3e50; 
+        /* General Styles */
+        /* Logo Styles */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
 }
 
+.logo-img {
+    max-height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-left: 12px;
+}
+
+/* If using text logo only */
+.navbar-brand .logo-text {
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    color: #3498db;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-brand {
+        margin-right: 0;
+    }
+    
+    .logo-img {
+        max-height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+}
 body {
-font-family: 'Tajawal', sans-serif;
-scroll-behavior: smooth;
-padding-top: 80px;
-background-color: var(--background-primary);
-color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 80px; /* Offset for fixed header */
 }
 
-.header, .navbar {
-background-color: var(--main-color);
-transition: all 0.5s ease-in-out;
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* Header Styles */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.nav-link {
-color: var(--text-color) !important;
-transition: all 0.3s ease;
+.navbar-nav .nav-link {
+    color: #2c3e50 !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.nav-link:hover, .nav-link.active {
-color: var(--secondary-color) !important;
-transform: scale(1.08) rotate(10deg); 
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #3498db !important;
 }
 
+/* Section Styles */
 section {
-padding: 100px 0;
-background-color: var(--section-color);
-color: var(--text-color);
-animation: fadeInUp 1.2s ease-in-out both;
+    padding: 80px 0;
 }
 
-@keyframes fadeInUp {
-from { opacity: 0; transform: translateY(50px); }
-to { opacity: 1; transform: translateY(0); }
+h1, h2, h3 {
+    color: #2c3e50;
+    font-weight: 700;
 }
 
-.container h2 {
-font-size: 2.8rem;
-margin-bottom: 20px;
-color: var(--secondary-color);
-animation: slideIn 1s ease forwards;
-}
-
-.container p {
-font-size: 1.2rem;
-line-height: 1.8;
-animation: fadeInText 2s ease;
-}
-
+/* Service Cards */
 .service-card {
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .service-card:hover {
-transform: translateY(-10px);
-box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+    transform: translateY(-10px);
 }
 
-#home {
-min-height: 100vh;
-background:
-  linear-gradient(rgba(52, 152, 219, 0.8), rgba(52, 152, 219, 0.8)),
-  url('digi pro.jpg') center/cover no-repeat;
-color: var(--text-color);
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-text-align: center;
-animation: zoomIn 1.5s ease-in-out, moveBackground 10s infinite alternate;
+/* Image Styles */
+.img-fluid {
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-@keyframes zoomIn {
-from { transform: scale(0.9); opacity: 0; }
-to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes moveBackground {
-0% { background-position: 0 0; }
-50% { background-position: 100% 0; }
-100% { background-position: 0 100%; }
-}
-
-#home h1 {
-font-size: 4rem;
-margin-bottom: 20px;
-color: var(--secondary-color);
-animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
-white-space: nowrap;
-overflow: hidden;
-border-right: 4px solid var(--secondary-color);
-}
-
-
-#home p {
-font-size: 1.7rem;
-margin-bottom: 30px;
-color: var(--text-color);
-animation: fadeInText 3s ease-in-out;
-}
-
-@keyframes typing {
-from { width: 0; }
-to { width: 100%; }
-}
-
-@keyframes blink-caret {
-from, to { border-color: transparent; }
-50% { border-color: var(--secondary-color); }
-}
-
-@keyframes slideIn {
-from { transform: translateX(-100px); opacity: 0; }
-to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes fadeInText {
-from { opacity: 0; }
-to { opacity: 1; }
-}
-
+/* Button Styles */
 .btn-primary {
-background-color: var(--secondary-color);
-border-color: var(--secondary-color);
-color: #fff;
-transition: all 0.3s ease;
+    background-color: #3498db;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-background-color: #2980b9;
-border-color: #2980b9;
-color: #fff;
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
-#track {
-background-color: #ffffff;
-color: var(--secondary-color);
-position: relative;
-overflow: hidden;
-animation: fadeInUp 1.2s ease-in-out both;
-}
-
-#track::before {
-content: "";
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: linear-gradient(120deg, transparent, rgba(52,152,219,0.2), transparent);
-animation: shine 3s infinite;
-}
-@keyframes shine {
-0% { left: -100%; }
-50% { left: 100%; }
-100% { left: 100%; }
-}
-
-#track h2 {
-background-color: rgba(255,255,255,0.05);
-padding: 20px;
-border-radius: 10px;
-color: var(--text-color);
-transition: background 0.3s;
-}
-
-#track h2:hover {
-background-color: rgba(255,255,255,0.1);
-}
-
-.contact-info, .service-card, .modal-content {
-animation: popUp 0.5s ease forwards;
-}
-
-@keyframes popUp {
-from { transform: scale(0.8); opacity: 0; }
-to { transform: scale(1); opacity: 1; }
-}
-
-.contact-info,
-form.bg-light,
+/* Modal Styles */
 .modal-content {
-background-color: #ecf0f1;
-color: #2c3e50;
+    border-radius: 15px;
 }
 
-input.form-control, textarea.form-control {
-background-color: #bdc3c7;
-color: #2c3e50;
-border: none;
-}
-
-input.form-control::placeholder,
-textarea.form-control::placeholder {
-color: #7f8c8d;
-}
-
-form.bg-light, .modal-content {
-animation: fadeSlideUp 0.8s ease-in-out;
-}
-
-@keyframes fadeSlideUp {
-from { opacity: 0; transform: translateY(30px); }
-to { opacity: 1; transform: translateY(0); }
-}
-
-.contact-info {
-background-color: #ecf0f1;
-border-radius: 8px;
-padding: 20px;
-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info h2 {
-color: #3498db; 
-}
-
-.contact-info p {
-color: #2980b9; 
-}
-
-.contact-info button {
-background-color: #3498db; 
-color: white;
-}
-
-/* Logo animé (rotation fluide) */
-#home img {
-animation: rotateLogo 5s linear infinite;
-position: absolute;
-top: 10%;
-left: 50%;
-transform: translateX(-50%);
-width: 150px; 
-}
-
-@keyframes rotateLogo {
-0% {
-  transform: translateX(-50%) rotate(0deg);
-}
-25% {
-  transform: translateX(-50%) rotate(90deg);
-}
-50% {
-  transform: translateX(-50%) rotate(180deg);
-}
-75% {
-  transform: translateX(-50%) rotate(270deg);
-}
-100% {
-  transform: translateX(-50%) rotate(360deg);
-}
-}
-
-/* animation Dropdown  */
-.dropdown-menu {
-display: none;
-position: absolute;
-background-color: #fff;
-min-width: 160px;
-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-z-index: 1;
-opacity: 0;
-transform: translateY(-30px) scale(0.9);
-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-.dropdown:hover .dropdown-menu {
-display: block;
-opacity: 1;
-transform: translateY(0) scale(1);
-animation: bounceIn 1s ease-in-out;
-}
-
-@keyframes bounceIn {
-0% {
-  opacity: 0;
-  transform: translateY(-30px) scale(0.9);
-}
-60% {
-  opacity: 1;
-  transform: translateY(10px) scale(1.05);
-}
-100% {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-}
-
-/*effet de transformation pour les boutons */
-.btn-primary, .dropdown-item, .navbar-brand {
-transition: all 0.3s ease;
-}
-
-.btn-primary:hover, .dropdown-item:hover, .navbar-brand:hover {
-transform: scale(1.1);
-background-color: #2980b9;
-color: #fff;
-box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-animation: buttonPulse 0.8s ease-out infinite alternate;
-}
-
-/* Animation de pulsation pour les boutons */
-@keyframes buttonPulse {
-0% {
-  transform: scale(1);
-}
-100% {
-  transform: scale(1.1);
-}
-}
-
-/* Animation dynamique du dropdown */
-.dropdown-menu {
-display: none;
-position: absolute;
-background-color: #fff;
-min-width: 160px;
-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-z-index: 1;
-opacity: 0;
-transform: translateY(-30px) scale(0.9);
-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-animation: dropdownShow 0.5s ease-in-out;
-}
-
-.dropdown:hover .dropdown-menu {
-display: block;
-opacity: 1;
-transform: translateY(0) scale(1);
-animation: bounceIn 1s ease-in-out;
-}
-
-@keyframes dropdownShow {
-0% {
-  opacity: 0;
-  transform: translateY(-30px) scale(0.9);
-}
-100% {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-}
-
-/* Effet d'animationdropdown */
-.dropdown-menu .dropdown-item {
-color: #3498db;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-font-size: 16px;
-transition: all 0.3s ease-out;
-}
-
-.dropdown-menu .dropdown-item:hover {
-background-color: #3498db;
-color: #fff;
-transform: translateX(0) scale(1.1);
-box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-}
-
-.dropdown-menu .dropdown-item:active {
-transform: scale(0.98) translateX(5px) rotate(15deg);
-}
-
-/* Animation de rebond pour le dropdown */
-@keyframes bounceIn {
-0% {
-  opacity: 0;
-  transform: translateY(-30px) scale(0.9);
-}
-60% {
-  opacity: 1;
-  transform: translateY(10px) scale(1.05);
-}
-100% {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-}
-
-/* Animation générale pour les boutons */
-.btn-primary:focus, .dropdown-item:focus, .navbar-brand:focus {
-outline: none;
-box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5);
-}
-
-/* animation dynamique de "track" */
-#track {
-transition: transform 0.3s ease-in-out;
-}
-
-#track:hover {
-transform: translateY(-5px) scale(1.05);
-box-shadow: 0 10px 15px rgba(52, 152, 219, 0.3);
-}
-
-/* Animation de texte pour les sections et titres */
-@keyframes fadeInUp {
-from { opacity: 0; transform: translateY(50px); }
-to { opacity: 1; transform: translateY(0); }
-}
-
-.section-title {
-font-size: 2rem;
-color: var(--secondary-color);
-animation: fadeInUp 0.8s ease-in-out;
-}
-
+/* Footer Styles */
 .footer {
-  background: #212529;
-  position: relative;
-  padding: 3rem 0;
-  color: white;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
+    background-color: #2c3e50;
+    padding: 40px 0;
 }
 
-/* Style des icônes sociales */
 .social-links a {
-  font-size: 2.5rem;
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%; /* Icônes rondes */
-  line-height: 60px; /* Centrer l'icône dans le cercle */
-  text-align: center;
-  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  background-color: transparent; /* Par défaut, fond transparent */
-  color: white; /* Couleur de l'icône par défaut */
+    color: white !important;
+    font-size: 24px;
+    margin: 0 15px;
+    transition: all 0.3s ease;
 }
 
-/* Couleur de base de chaque icône */
-#facebook {
-  color: #3b5998; /* Bleu de Facebook */
-}
-
-#instagram {
-  color: #e4405f; /* Rose d'Instagram */
-}
-
-#linkedin {
-  color: #0077b5; /* Bleu clair LinkedIn */
-}
-
-/* Effet de survol (ajout de la couleur de fond) */
 .social-links a:hover {
-  transform: scale(1.2); /* Agrandir l'icône au survol */
-  background-color: currentColor; /* La couleur de fond devient celle de l'icône */
-  color: white; /* Icône reste blanche */
+    color: #3498db !important;
+    transform: translateY(-3px);
 }
 
-#facebook:hover {
-  background-color: #3b5998; 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+        padding: 15px 0;
+    }
+    
+    .service-card {
+        margin: 15px;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
 }
 
-#instagram:hover {
-  background-color: #e4405f; 
+/* Form Styles */
+.form-control {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
 }
 
-#linkedin:hover {
-  background-color: #0077b5; 
+.form-control:focus {
+    border-color: #3498db;
+    box-shadow: none;
+}
+
+/* List Styles */
+.list-unstyled li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.list-unstyled li:before {
+    content: "•";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+/* Footer Logo Styles */
+.footer-logo {
+    max-height: 150px;
+    width: auto;
+    margin-bottom: 15px;
+}
+
+.footer .logo-text {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Footer Contact Info */
+.footer p {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-logo {
+        max-height: 40px;
+    }
+    
+    .footer .logo-text {
+        font-size: 1.4rem;
+    }
+    
+    .footer .social-links {
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+    .footer .row > div {
+        text-align: center !important;
+    }
+}/* Animated Background Logo */
+.bg-logo-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    opacity: 0.05;
+}
+
+.animated-bg-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.08;
+    max-width: 600px;
+    animation: logoComposite 8s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(79, 70, 229, 0.1));
+}
+
+@keyframes logoComposite {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1) rotate(0deg); 
+        opacity: 0.08;
+    }
+    50% { 
+        transform: translate(-50%, -55%) scale(1.05) rotate(2deg); 
+        opacity: 0.12;
+    }
+}
+
+/* Home Section Styling */
+#home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    /* background: linear-gradient(45deg, #f1f1f1, #ffffff); */
+    color: rgb(99, 82, 196);
+    overflow: hidden;
+    position: relative;
+}
+
+.container.text-center {
+    position: relative;
+    z-index: 2; /* Increased z-index to ensure content stays above logo */
+}
+
+.display-4 {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #818cf8, #4f46e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textScale 1s ease-out;
+}
+
+@keyframes textScale {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+h2 p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: slideUp 1s ease-out;
+}
+
+.list-unstyled li {
+    font-size: 1.1rem;
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.list-unstyled li:hover {
+    background: rgba(79, 70, 229, 0.2);
+    transform: translateX(10px);
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.list-unstyled li:nth-child(1) { animation-delay: 0.2s; }
+.list-unstyled li:nth-child(2) { animation-delay: 0.4s; }
+.list-unstyled li:nth-child(3) { animation-delay: 0.6s; }
+.list-unstyled li:nth-child(4) { animation-delay: 0.8s; }
+
+.lead {
+    font-size: 1.4rem;
+    margin: 2rem 0;
+    color: #818cf8;
+    animation: colorShift 3s infinite alternate;
+}
+
+@keyframes colorShift {
+    0% { color: #818cf8; }
+    100% { color: #4f46e5; }
+}
+
+/* Content Animation */
+#home .container {
+    animation: contentFade 1.5s ease-out;
+}
+
+@keyframes contentFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    h2 p {
+        font-size: 1.2rem;
+    }
+    
+    .list-unstyled li {
+        font-size: 1rem;
+    }
+
+    .animated-bg-logo {
+        max-width: 120vw;
+        opacity: 0.15; /* Fixed invalid opacity value */
+    }
 }

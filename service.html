@@ -10,6 +10,11 @@
 <body>
     <header class="header fixed-top">
         <nav class="container navbar navbar-expand-lg">          
+         <a class="navbar-brand" href="index.html">
+            <img src="digi pro.jpg" alt="DIGI PRO Logo" class="logo-img">
+            <!-- Or text logo -->
+            <span class="logo-text">DIGI PRO</span>
+        </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,7 +42,11 @@
     </header>
     <!-- Home Section -->
     <section id="home">
-        <div class="container text-center">
+         <div class="bg-logo-animation">
+        <img src="digi pro.jpg" alt="DIGI PRO Logo" class="animated-bg-logo">
+    </div>
+
+    <div class="container text-center position-relative">
             <h1 class="display-4 mb-4">Welcome to DIGI PRO</h1>
             <h2><p>We develop your digital presence with creative ideas and tangible results.</p></h2>
             <p class="lead">📍 هل لديك مشروع… ولكنك لم تبدأ بعد؟</p>
@@ -131,17 +140,42 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer bg-dark text-white py-4">
-        <div class="container text-center">
-            <p>All Rights Reserved © 2025 DIGI PRO</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/DIGI.PRO.TN" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+      <!-- Footer -->
+<footer class="footer bg-dark text-white py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Logo Column -->
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                <a class="navbar-brand" href="index.html">
+                    <img src="digi_pro-removebg-preview.png" alt="DIGI PRO Logo" class="footer-logo">
+                    <!-- or text version -->
+                    <span class="logo-text">DIGI PRO</span>
+                </a>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-4 text-center mb-3 mb-md-0">
+                <p class="mb-1">contact@digipro.com</p>
+                <p class="mb-0">+216 12 345 678</p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="col-md-4 text-center text-md-end">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/DIGI.PRO.TN" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-danger mx-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
         </div>
-    </footer>
+        
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <p class="mb-0">All Rights Reserved © 2025 DIGI PRO</p>
+            </div>
+        </div>
+    </div>
+</footer>
     <div class="modal fade" id="orderModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
