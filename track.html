@@ -73,15 +73,200 @@
                 <div class="col-md-6">
                      
                     <form id="orderForm" class="bg-white p-4 rounded shadow" method="POST" action="https://api.web3forms.com/submit" onsubmit="sendOrder(event)">
-                    <input type="hidden" name="access_key" value="8fd1dc45-ba5e-4653-b488-8ec0ed368439" />
+    <input type="hidden" name="access_key" value="8fd1dc45-ba5e-4653-b488-8ec0ed368439" />
 
-                        <div class="mb-3">
-                            <p>عملت طلب و تحب تعرف فين وصل؟ تواصل معنا و نعطيوك كل التفاصيل.</p>
-                            <label class="form-label">Order ID</label>
-                            <input type="text" class="form-control" name="order id" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Track</button>
-                    </form>
+    <div class="mb-3 form-item">
+        <p class="animate-fade-in">عملت طلب و تحب تعرف فين وصل؟ تواصل معنا و نعطيوك كل التفاصيل.</p>
+        <div class="form-group">
+            <label class="form-label">Order ID</label>
+            <input type="text" class="form-control" name="order_id" required>
+            <div class="underline"></div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary send-btn">
+        <span class="btn-text">Track</span>
+        <span class="spinner"></span>
+        <span class="particles"></span>
+    </button>
+    
+    <div id="orderResult" class="mt-3"></div>
+</form>
+
+<style>
+.form-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: formItemEnter 0.6s forwards;
+}
+
+@keyframes formItemEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-control {
+    transition: all 0.3s ease;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+    transform: scale(1.02);
+}
+
+.underline {
+    height: 2px;
+    background: #0d6efd;
+    width: 0;
+    transition: width 0.4s ease;
+}
+
+.form-control:focus ~ .underline {
+    width: 100%;
+}
+
+.send-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(0);
+    border-radius: 30px;
+    padding: 12px 30px;
+}
+
+.send-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.4);
+    letter-spacing: 1px;
+}
+
+.send-btn:active {
+    transform: translateY(2px) scale(0.98);
+}
+
+.particles {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.send-btn:hover .particles {
+    animation: particles 1s ease-out infinite;
+}
+
+@keyframes particles {
+    0% { opacity: 0; transform: translateY(0) translateX(0); }
+    30% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-50px) translateX(50px); }
+}
+
+.send-btn .spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s linear infinite;
+}
+
+.send-btn.sending .btn-text {
+    visibility: hidden;
+}
+
+.send-btn.sending .spinner {
+    display: block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#orderResult {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+}
+
+#orderResult.show {
+    opacity: 1;
+    transform: translateY(0);
+    animation: bounceIn 0.6s ease;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+}
+</style>
+
+<script>
+function sendOrder(e) {
+    e.preventDefault();
+    const form = document.getElementById('orderForm');
+    const result = document.getElementById('orderResult');
+    const submitBtn = document.querySelector('.send-btn');
+
+    // Show loading state
+    submitBtn.classList.add('sending');
+    submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+    
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            result.innerHTML = `<div class="alert alert-success">تم استلام طلبك، سنتواصل معك قريبًا! 🎉</div>`;
+            form.reset();
+        } else {
+            result.innerHTML = `<div class="alert alert-danger">خطأ: ${data.message}</div>`;
+        }
+    })
+    .catch(error => {
+        result.innerHTML = `<div class="alert alert-danger">حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.</div>`;
+    })
+    .finally(() => {
+        submitBtn.classList.remove('sending');
+        submitBtn.disabled = false;
+        result.classList.add('show');
+        setTimeout(() => result.classList.remove('show'), 5000);
+    });
+}
+
+// Add entrance animations
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.form-item').forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.2}s`;
+    });
+});
+</script>
                     <div id="trackResult" class="mt-4"></div>
                 </div>
             </div>
