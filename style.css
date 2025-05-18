@@ -378,6 +378,7 @@ h2 p {
     font-weight: 700;
     background: linear-gradient(45deg, #2563eb, #3b82f6);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
