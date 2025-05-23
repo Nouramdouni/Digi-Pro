@@ -265,5 +265,5 @@ const scrollReveal = () => {
       const header = document.querySelector('.header');
       header.classList.toggle('shadow-lg', window.scrollY > 50);
     });
-  });
+  }); 
   
