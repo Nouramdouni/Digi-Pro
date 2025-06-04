@@ -179,7 +179,7 @@
         }
 
         /* Footer Logo Styles */
-        .footer-logo {
+        /* .footer-logo {
             max-height: 150px;
             width: auto;
             margin-bottom: 15px;
@@ -195,10 +195,50 @@
         .footer .navbar-brand {
             display: inline-flex;
             align-items: center;
+        } */
+        .footer a.text-white {
+            transition: color 0.3s ease, text-decoration 0.3s ease;
         }
 
+        .footer a.text-white:hover {
+            color: #00aced;
+            /* Change to any color you like */
+            text-decoration: underline;
+            /* Adds underline on hover */
+        }
+.footer a.text-white {
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+
+.footer a.text-white::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #00aced;
+  transition: width 0.3s;
+}
+
+.footer a.text-white:hover::after {
+  width: 100%;
+}
+
+
         /* Footer Contact Info */
-       
+        .footer-logo {
+            height: 40px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            color: #0dcaf0;
+            /* Bootstrap info color */
+        }
+
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .footer-logo {
@@ -819,7 +859,7 @@
         /*******************************************/
         /* Modified CSS with card2 class */
         .card2 {
-            display: flex; 
+            display: flex;
             justify-content: center;
             height: 70px;
             width: 350px;
@@ -901,15 +941,23 @@
             100% {
                 transform: scale(1);
             }
-        } 
+        }
 
-.allr {
-    font-family: 'Poppins', sans-serif; /* Police moderne (remplacez par votre choix) */
-    font-size: 20px; /* Taille ajustable */
-    text-align: center; /* Centrage horizontal */
-    margin: 0; /* Supprime les marges par défaut */
-    padding: 10px 0; /* Espacement vertical */
-    letter-spacing: 0.5px; /* Espacement entre les lettres */
-    opacity: 0.8; /* Légère transparence pour un effet discret */
-    font-weight: 300; /* Poids léger (ou 400 pour normal) */
-}
+        .allr {
+            font-family: 'Poppins', sans-serif;
+            /* Police moderne (remplacez par votre choix) */
+            font-size: 20px;
+            /* Taille ajustable */
+            text-align: center;
+            /* Centrage horizontal */
+            margin: 0;
+            /* Supprime les marges par défaut */
+            padding: 10px 0;
+            /* Espacement vertical */
+            letter-spacing: 0.5px;
+            /* Espacement entre les lettres */
+            opacity: 0.8;
+            /* Légère transparence pour un effet discret */
+            font-weight: 300;
+            /* Poids léger (ou 400 pour normal) */
+        }
