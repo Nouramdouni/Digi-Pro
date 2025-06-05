@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIGI PRO</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header fixed-top">
+    <nav class="container navbar navbar-expand-lg">
+      <a class="navbar-brand" href="index.html">
+        <img src="digi pro.jpg" alt="DIGI PRO Logo" class="logo-img">
+        <span class="logo-text">DIGI PRO</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="service.html" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Services</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html#services">All Services</a></li>
+                <li><a class="dropdown-item" href="index.html#sponsor">Sponsor</a></li>
+                <li><a class="dropdown-item" href="index.html#site-web">Website Design</a></li>
+                <li><a class="dropdown-item" href="index.html#logo">Logo Design</a></li>
+                <li><a class="dropdown-item" href="index.html#marketing">Digital Marketing</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="track.html">Track Order</a></li>
+          </ul>
+        </div>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="bg-logo-animation">
+      <img src="digi pro.jpg" alt="DIGI PRO Logo" class="animated-bg-logo">
+    </div>
+
+    <div class="container text-center position-relative">
+      <h1 class="display-4 mb-4">Welcome to DIGI PRO</h1>
+      <h2>
+        <p>We develop your digital presence with creative ideas and tangible results.</p>
+      </h2>
+      <p class="lead">📍 هل لديك مشروع… ولكنك لم تبدأ بعد؟</p>
+      <p> DIGI PRO هنا لتبدأ معك من الصفر! </p>
+      <p>🛠️ خدماتنا:</p>
+      <ul class="list-unstyled d-inline-block text-start">
+        <li class="mb-2">✔️ نصمم لك شعارًا احترافيًا</li>
+        <li class="mb-2">✔️ نطوّر لك موقعًا إلكترونيًا عصريًا</li>
+        <li class="mb-2">✔️ نطلق لك حملات إعلانية ممولة على فيسبوك وإنستغرام</li>
+        <li class="mb-2">✔️ نساعدك على بناء هوية رقمية كاملة لمشروعك</li>
+      </ul>
+      <p>💡 لماذا DIGI PRO?</p>
+      <ul class="list-unstyled d-inline-block text-start">
+        <li class="mb-2">🔹 نعرف السوق</li>
+        <li class="mb-2">🔹 نعمل بإبداع</li>
+        <li class="mb-2">🔹 نرافقك خطوة بخطوة نحو النجاح</li>
+      </ul>
+      <p>📲 تواصل معنا اليوم وابدأ رحلتك نحو التميّز الرقمي !</p>
+      <p>DIGI PRO — انطلاقتك الرقمية تبدأ من هنا</p>
+    </div>
+  </section>
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Services</h2>
+      <div class="row" id="services-container"></div>
+    </div>
+  </section>
+  <div id="orderResult" class="mt-3"></div>
+
+  <!-- Site Web Section -->
+  <section id="site-web">
+    <div class="container">
+      <h2 class="text-center mb-5">Website Design</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="assets/images/site-web.jpg" class="img-fluid rounded" alt="Website Design">
+        </div>
+        <div class="col-md-6">
+          <p class="lead">We design professional, mobile-friendly websites that reflect your identity and
+            build customer trust.</p>
+
+          <button class="learn-more" data-bs-toggle="modal" data-bs-target="#orderModal" data-service="Website Design">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <br>
+            <span class="button-text"> &nbsp Order Service</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logo Section -->
+  <section id="logo">
+    <div class="container">
+      <h2 class="text-center mb-5">Logo Design</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="assets/images/logo.jpg" class="img-fluid rounded" alt="Logo Design">
+        </div>
+        <div class="col-md-6">
+          <p class="lead">Unique and professional logo designs for your brand.</p>
+          <button class="learn-more" data-bs-toggle="modal" data-bs-target="#orderModal"
+            data-service="Logo Design"><span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <br>
+            <span class="button-text"> &nbsp Order Service</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsor Section -->
+  <section id="sponsor">
+    <div class="container">
+      <h2 class="text-center mb-5">Sponsor</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="assets/images/sponsor.jpg" class="img-fluid rounded" alt="Sponsor">
+        </div>
+        <div class="col-md-6">
+          <p class="lead">We create advertising campaigns on Facebook and Instagram to reach more potential
+            customers.</p>
+          <button class="learn-more" data-bs-toggle="modal" data-bs-target="#orderModal" data-service="Sponsor"><span
+              class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <br>
+            <span class="button-text"> &nbsp Order Service</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketing Section -->
+  <section id="marketing">
+    <div class="container">
+      <h2 class="text-center mb-5">Digital Marketing</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="assets/images/marketing.jpg" class="img-fluid rounded" alt="Digital Marketing">
+        </div>
+        <div class="col-md-6">
+          <p>We help you build an effective marketing strategy on social media to increase your engagement and
+            sales.</p>
+          <button class="learn-more" data-bs-toggle="modal" data-bs-target="#orderModal"
+            data-service="Digital Marketing"><span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <br>
+            <span class="button-text"> &nbsp Order Service</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-white py-5">
+    <div class="container">
+      <div class="row align-items-start">
+
+        <!-- Logo Column -->
+        <div class="col-md-3 mb-4 mb-md-0 text-center text-md-start">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="digi_pro-removebg-preview.png" alt="DIGI PRO Logo" class="footer-logo me-2"
+              style="height: 100px;">
+            <span class="fs-5 fw-bold">DIGI PRO</span>
+          </a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-3 mb-4 mb-md-0 text-center">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="mb-1"><i class="fas fa-envelope me-1"></i>digipro216@gmail.com</p>
+          <p class="mb-0"><i class="fas fa-phone me-1"></i> +216 96 661 441</p>
+        </div>
+
+        <!-- Useful Links -->
+
+        <div class="col-md-3 mb-4 mb-md-0 text-center">
+          <h6 class="fw-bold">Quick Links</h6>
+          <p class="mb-1"><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+          <p class="mb-1"><a href="track.html" class="text-white text-decoration-none">Track Order</a></p>
+          <p class="mb-1"><a href="contact.html" class="text-white text-decoration-none">Contact Us</a></p>
+          <p class="mb-1"><a href="service.html" class="text-white text-decoration-none">Service</a></p>
+        </div>
+        <!-- Social Links -->
+        <div class="col-md-3 text-center  ">
+          <h6 class="fw-bold">Connect with Us</h6>
+
+          <div class="gap-3 mt-2 text-center">
+            <!-- Gmail -->
+            <div class="d-flex justify-content-center gap-3 mb-2">
+              <a href="mailto:digipro216@gmail.com" class="text-white" title="Email">
+                <i class="fas fa-envelope fa-lg"></i>
+              </a>
+
+              <!-- WhatsApp -->
+              <a href="https://wa.me/96661441" class="text-white" title="WhatsApp" target="_blank">
+                <i class="fab fa-whatsapp fa-lg"></i>
+              </a>
+            </div>
+            <div class="d-flex justify-content-center gap-3 mb-2">
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/DIGI.PRO.TN" class="text-white" title="Facebook" target="_blank">
+                <i class="fab fa-facebook fa-lg"></i>
+              </a>
+              <!-- Instagram -->
+
+              <!-- LinkedIn -->
+              <a href="#" class="text-white" title="LinkedIn" target="_blank">
+                <i class="fab fa-linkedin fa-lg"></i>
+              </a>
+
+            
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <hr class="border-secondary">
+          <p class="mb-0 small">&copy; 2025 DIGI PRO — All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="modal fade" id="orderModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Order Service</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <form id="orderForm" method="POST" action="https://api.web3forms.com/submit" onsubmit="sendOrder(event)">
+
+          <input type="hidden" name="access_key" value="8fd1dc45-ba5e-4653-b488-8ec0ed368439" />
+
+          <div class="modal-body">
+
+            <div class="mb-3">
+              <label>Full Name</label>
+              <input name="name" type="text" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label>Phone Number</label>
+              <input name="phone" type="tel" class="form-control" pattern="\d{8}" required>
+            </div>
+
+            <div class="mb-3">
+              <label>Email</label>
+              <input name="email" type="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label>Service Requested</label>
+              <input name="service" type="text" class="form-control" id="selectedService" readonly>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit Order</button>
+          </div>
+        </form>
+        <script>
+          // Set service name in modal when button is clicked
+          document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#orderModal"]').forEach(btn => {
+            btn.addEventListener('click', function () {
+              const service = this.getAttribute('data-service');
+              document.getElementById('selectedService').value = service || '';
+            });
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- <script src="./main.js"></script> -->
+  <script>
+    async function sendOrder(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const form = document.getElementById('orderForm');
+      const result = document.getElementById('orderResult');
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          result.innerHTML = `<div class="alert alert-success">✅ ${data.message}</div>`;
+          form.reset();
+
+          // Close the modal (if using Bootstrap 5 modal)
+          const modal = bootstrap.Modal.getInstance(document.getElementById('orderModal'));
+          if (modal) modal.hide();
+
+        } else {
+          result.innerHTML = `<div class="alert alert-danger">❌ ${data.message}</div>`;
+        }
+      } catch (error) {
+        result.innerHTML = `<div class="alert alert-danger">❌ Something went wrong. Please try again.</div>`;
+      }
+    }
+  </script>
+
+</html>
